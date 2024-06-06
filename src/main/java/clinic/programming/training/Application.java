@@ -2,9 +2,15 @@ package clinic.programming.training;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.commons.lang3.StringUtils;
 
 
 public class Application {
+
+    public int countWords(String words) {
+        String[] seperate = StringUtils.split(words, ' ');
+        return (seperate == null) ? 0 : seperate.length;
+    }
 
     public void greet() {
         List<String> greetings = new ArrayList<>();
@@ -24,5 +30,6 @@ public class Application {
     	System.out.println ("Starting Application");
         Application app = new Application();
         app.greet();
+        System.out.println("Word Count: " + app.countWords("I have four words"));
     }
 }
